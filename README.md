@@ -7,6 +7,16 @@ Claude デスクトップアプリ（Code タブ）の見た目を変える mod 
 | `galaxy-night` | 立体ブロックで描いた宇宙。太陽、地球と月、輪のある惑星、ブラックホール、渦巻き銀河、星雲、彗星がゆっくり動きます |
 | `digital-rain` | 黒い画面を緑の英数字の列が上から降り続けます |
 
+### galaxy-night
+
+![galaxy-night の背景](docs/galaxy-night.png)
+
+### digital-rain
+
+![digital-rain の背景](docs/digital-rain.png)
+
+画像は会話の後ろに描かれる背景だけを書き出したプレビューです。実際のアプリでは、この上に会話がすりガラス越しに重なり、星や天体、文字の列が動きます。
+
 ## インストール
 
 ターミナルで Claude Code を起動し、プロンプトに次を入力します（`y` でマーケットプレイスを追加し、スコープは user を選びます）。
