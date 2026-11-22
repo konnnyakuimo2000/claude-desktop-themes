@@ -16,6 +16,15 @@ Claude デスクトップアプリ（Code タブ）の背景を、立体ブロ�
 
 配色（深い藍とすみれ色）、すりガラスの強さ、吹き出しの見た目もこのテーマで設定します。
 
+## テーマの切り替え
+
+`galaxy-night` と `digital-rain` を両方入れている場合は、Claude Code のプロンプトでテーマ名を入力すると切り替わります。
+
+- `/galaxy-night` … 銀河テーマにする
+- `/digital-rain` … デジタルな雨テーマにする
+
+今のセッションにすぐ反映され、選んだテーマは `~/.claude/claude-desktop-themes.json` に保存されるので、次のセッションからもそのテーマになります。
+
 ## 必要なもの
 
 - Claude Code v2.1.323 以降と、mod の背景を描く Claude デスクトップアプリ
@@ -25,6 +34,7 @@ Claude デスクトップアプリ（Code タブ）の背景を、立体ブロ�
 
 - `hooks/register.tsx` — 配色・吹き出し・背景の設定
 - `hooks/scene.ts` — 背景の SVG を組み立てるコード（ブロックの大きさ `BW` / `BH`、各天体の位置や色はここ）
+- `hooks/choice.ts` — どのテーマを使うかの保存と読み込み
 - `hooks/make-colors.js` — 配色を作る補助（Claude Code のスキルからコピー。ビルドが更新されたら差し替え）
 - `tests/backdrop.test.tsx` — 背景が描けるかのテスト（`claude plugin test <このフォルダ>`）
 

@@ -1,5 +1,6 @@
 import type { EngineInterface, Register, ThemeSetArgs } from 'claude-code'
 
+import { isChosen, writeChoice } from './choice'
 import { makeColors } from './make-colors.js'
 import { rainSvg } from './scene'
 
@@ -69,21 +70,42 @@ async function applyLook($: EngineInterface) {
   }
 }
 
+const ME = 'digital-rain'
+
 export const register: Register = on => {
   on('session.start', async ($, e, next) => {
-    const unpainted = problems.find(line => line.startsWith("Desktop won't paint"))
-    if (unpainted !== undefined) {
-      $.ui.toast(unpainted)
+    await $.command.register({
+      name: ME,
+      description: 'デジタルな雨テーマ（digital-rain）に切り替える（次のセッションからもこのテーマ）',
+    })
+    if (await isChosen($, ME)) {
+      const unpainted = problems.find(line => line.startsWith("Desktop won't paint"))
+      if (unpainted !== undefined) {
+        $.ui.toast(unpainted)
+      }
+      await applyLook($)
     }
-    await applyLook($)
     return next(e)
   })
 
   // The desktop app attaches after session.start: set the look again so it draws.
   on('session.attach', async ($, e, next) => {
     const result = await next(e)
-    await applyLook($)
+    if (await isChosen($, ME)) {
+      await applyLook($)
+    }
     return result
+  })
+
+  // /digital-rain: use this theme now, and in the sessions that start after
+  on('command.run', { command: ME }, async $ => {
+    const saved = await writeChoice($, ME)
+    await applyLook($)
+    return {
+      text: saved
+        ? 'デジタルな雨テーマ（digital-rain）に切り替えました。次のセッションからもこのテーマになります。'
+        : 'デジタルな雨テーマ（digital-rain）に切り替えました（選択を保存できなかったので、次のセッションでは元のテーマになることがあります）。',
+    }
   })
 
   on('ui.render', { component: 'Backdrop' }, ($, e, next) => {

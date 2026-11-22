@@ -41,12 +41,17 @@ claude plugin install galaxy-night --marketplace konnnyakuimo2000/claude-desktop
 
 ## テーマの切り替え
 
-テーマはセッションの開始時に設定されるので、有効にするのは1つだけにしてください。
+2つとも入れておき、Claude Code のプロンプトでテーマ名を入力すると切り替わります。
 
 ```
-claude plugin disable galaxy-night@claude-desktop-themes
-claude plugin enable digital-rain@claude-desktop-themes
+/galaxy-night
 ```
+
+```
+/digital-rain
+```
+
+今のセッションにすぐ反映され、選んだテーマは `~/.claude/claude-desktop-themes.json` に保存されるので、次のセッションからもそのテーマになります。片方だけ入れた場合は、そのテーマがそのまま使われます。
 
 ## 必要なもの
 

@@ -12,19 +12,20 @@ Claude デスクトップアプリ（Code タブ）の背景を、緑の文字�
 - Claude Code v2.1.323 以降と、mod の背景を描く Claude デスクトップアプリ
 - Windows の「アニメーション効果」がオン（オフだと止まった画面になります）
 
-## ほかのテーマとの切り替え
+## テーマの切り替え
 
-テーマはセッションの開始時に設定されるので、同時に有効にするのは1つだけにしてください。
+`galaxy-night` と `digital-rain` を両方入れている場合は、Claude Code のプロンプトでテーマ名を入力すると切り替わります。
 
-```powershell
-claude plugin disable galaxy-night@claude-desktop-themes
-claude plugin enable digital-rain@claude-desktop-themes
-```
+- `/galaxy-night` … 銀河テーマにする
+- `/digital-rain` … デジタルな雨テーマにする
+
+今のセッションにすぐ反映され、選んだテーマは `~/.claude/claude-desktop-themes.json` に保存されるので、次のセッションからもそのテーマになります。
 
 ## ファイル
 
 - `hooks/register.tsx` — 配色・吹き出し・背景の設定
 - `hooks/scene.ts` — 降ってくる文字の SVG（文字の種類 `GLYPHS`（英数字）、色 `SHADES`、列の数や速さはここ）
+- `hooks/choice.ts` — どのテーマを使うかの保存と読み込み
 - `hooks/make-colors.js` — 配色を作る補助（Claude Code のスキルからコピー）
 - `tests/backdrop.test.tsx` — 背景が描けるかのテスト
 
