@@ -1,0 +1,16 @@
+{
+  "name": "claude-desktop-themes",
+  "owner": { "name": "konnnyakuimo2000" },
+  "plugins": [
+    {
+      "name": "galaxy-night",
+      "source": "./mods/galaxy-night",
+      "description": "立体ブロックで描いた動く宇宙のダークテーマ"
+    },
+    {
+      "name": "digital-rain",
+      "source": "./mods/digital-rain",
+      "description": "緑の文字が上から降り続けるダークテーマ"
+    }
+  ]
+}
