@@ -3,7 +3,7 @@ import type { EngineInterface } from 'claude-code'
 // The themes of this collection share one small file that says which of them is in use,
 // so that with several installed, only the chosen one sets the look when a session starts.
 
-const THEMES = ['galaxy-night', 'digital-rain']
+const THEMES = ['galaxy-night', 'digital-rain', 'event-horizon']
 
 async function choicePath($: EngineInterface): Promise<string | undefined> {
   const home = (await $.env.get('USERPROFILE')) ?? (await $.env.get('HOME'))

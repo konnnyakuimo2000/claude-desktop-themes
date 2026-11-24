@@ -18,10 +18,11 @@ Claude デスクトップアプリ（Code タブ）の背景を、立体ブロ�
 
 ## テーマの切り替え
 
-`galaxy-night` と `digital-rain` を両方入れている場合は、Claude Code のプロンプトでテーマ名を入力すると切り替わります。
+同じコレクションのテーマ（`galaxy-night`、`digital-rain`、`event-horizon`）を入れている場合は、Claude Code のプロンプトでテーマ名を入力すると切り替わります。
 
 - `/galaxy-night` … 銀河テーマにする
 - `/digital-rain` … デジタルな雨テーマにする
+- `/event-horizon` … ブラックホールのテーマにする
 
 今のセッションにすぐ反映され、選んだテーマは `~/.claude/claude-desktop-themes.json` に保存されるので、次のセッションからもそのテーマになります。
 

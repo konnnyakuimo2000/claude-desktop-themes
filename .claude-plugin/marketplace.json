@@ -1,6 +1,8 @@
 {
   "name": "claude-desktop-themes",
-  "owner": { "name": "konnnyakuimo2000" },
+  "owner": {
+    "name": "konnnyakuimo2000"
+  },
   "plugins": [
     {
       "name": "galaxy-night",
@@ -11,6 +13,11 @@
       "name": "digital-rain",
       "source": "./mods/digital-rain",
       "description": "緑の文字が上から降り続けるダークテーマ"
+    },
+    {
+      "name": "event-horizon",
+      "source": "./mods/event-horizon",
+      "description": "丸いドットで描いた巨大なブラックホールと降着円盤のダークテーマ"
     }
   ]
 }
